@@ -3,6 +3,8 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
+> :warning: speedtest-net does not support newer node versions. Pleas use node 12
+
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
