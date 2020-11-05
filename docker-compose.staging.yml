@@ -12,5 +12,5 @@ services:
 
         environment:
             POSTGRES_USER: ${PG_USER-speedtestApiStg}
-            POSTGRES_PASSWORD: ${PG_PASSWORD-dbjsd667bsbhd6te}
+            POSTGRES_PASSWORD: ${PG_PASSWORD:?Missing environment variable see readme}
             POSTGRES_DB: ${PG_DB-speedtestApiStg}
