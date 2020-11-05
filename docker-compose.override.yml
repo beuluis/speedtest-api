@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+    speedtestapi:
+        build:
+            target: develop
+
+        container_name: speedtestApiDev
+
+        environment:
+            FORCE_COLOR: 1
+
+        volumes:
+            - ./src:/app/src
+            - ./config:/app/config
+
+        ports:
+            - ${INSPECT_PORT-9229}:9229
+            - ${PORT-3300}:80
+
+    postgres:
+        container_name: speedtestApiPostgresqlDev
+
+        environment:
+            FORCE_COLOR: 1
+            POSTGRES_USER: ${PG_USER-speedtestApiDev}
+            POSTGRES_PASSWORD: ${PG_PASSWORD-sahjbbd74bds74}
+            POSTGRES_DB: ${PG_DB-speedtestApiDev}

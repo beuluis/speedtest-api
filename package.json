@@ -1,0 +1,55 @@
+{
+  "name": "speedtester-api",
+  "version": "1.0.0",
+  "description": "Collects Speedtest values and makes them available via REST",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon --inspect=0.0.0.0:9229 src/server.js",
+    "start:staging": "node src/server.js",
+    "start:production": "node src/server.js",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "gen-docu": "swagger2markdown -s src/swagger/swagger.json -m swagger.md"
+  },
+  "author": "Luis Beu",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.0",
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "@hapi/joi-date": "^2.0.1",
+    "chalk": "^4.1.0",
+    "config": "^3.3.2",
+    "cron": "^1.8.2",
+    "date-fns": "^2.16.1",
+    "is-online": "^9.0.0",
+    "logging": "^3.2.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.4.2",
+    "promise-retry": "^2.0.1",
+    "restify": "^8.5.1",
+    "restify-cors-middleware": "^1.1.1",
+    "restify-errors": "^8.0.2",
+    "restify-router": "^0.6.2",
+    "sequelize": "^6.3.5",
+    "sequelize-paginate": "^1.1.6",
+    "speedtest-net": "^2.1.1",
+    "swagger-ui-restify": "^3.0.8",
+    "umzug": "^2.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged --verbose"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint"
+    ]
+  }
+}

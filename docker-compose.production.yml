@@ -1,0 +1,16 @@
+# not sure to do this yet. Will work on this
+version: "3.7"
+services:
+    speedtestapi:
+        build:
+            target: staging
+
+        container_name: speedtestApiProd
+
+    postgres:
+        container_name: speedtestApiPostgresqlProd
+
+        environment:
+            POSTGRES_USER: ${PG_USER-speedtestApiProd}
+            POSTGRES_PASSWORD: ${PG_PASSWORD-bdjvd6h36t7gv26}
+            POSTGRES_DB: ${PG_DB-speedtestApiProd}

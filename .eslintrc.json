@@ -1,0 +1,54 @@
+{
+    "extends": "airbnb-base",
+    "env": {
+        "browser": true,
+        "node": true
+},
+
+    "rules": {
+
+        "indent": [
+            "error",
+            4
+        ],
+
+        "no-async-promise-executor": [
+            "off"
+        ],
+
+        "class-methods-use-this": [
+            "off"
+        ],
+
+        "dot-notation": [
+            "off"
+        ],
+
+        "no-useless-escape": [
+            "off"
+        ],
+
+        "consistent-return": [
+            "off"
+        ],
+
+        "no-console": [
+            "error",
+            {
+                "allow": [
+                    "warn",
+                    "error",
+                    "log"
+                ]
+            }
+        ],
+
+        "no-param-reassign": [2, { "props": false }],
+        "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+        "prefer-destructuring": "off"
+    },
+
+    "globals": {
+        "document": false
+    }
+}
