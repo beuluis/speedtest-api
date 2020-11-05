@@ -8,7 +8,6 @@
     "start:staging": "node src/server.js",
     "start:production": "node src/server.js",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "gen-docu": "swagger2markdown -s src/swagger/swagger.json -m swagger.md"
   },
   "author": "Luis Beu",
   "license": "MIT",
