@@ -1,6 +1,5 @@
 ## Project ##
 .env*
-config/local*
 
 ### Code ###
 .vscode/*
