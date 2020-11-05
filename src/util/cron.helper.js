@@ -1,4 +1,5 @@
 // Dependencies
+const config = require('config');
 const CronJob = require('cron').CronJob;
 const logging = require('logging');
 
@@ -9,9 +10,8 @@ const { saveSpeedtest } = require('./speedtest.helper');
 const cronLogger = logging.default('Cron');
 
 // register cron jobs
-// TODO: make config
 const initCron = () => {
-    new CronJob('*/5 * * * *', () => {
+    new CronJob(config.get('cron.speedtestCron'), () => {
         cronLogger.info('Starting speedtest Cronjob');
         saveSpeedtest();
     }).start();

@@ -63,4 +63,8 @@ module.exports = {
     validation: {
         maxSize: 200, // Max page size
     },
+
+    cron: {
+        speedtestCron: '*/5 * * * *',
+    },
 };
