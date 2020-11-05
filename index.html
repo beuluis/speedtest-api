@@ -3,14 +3,26 @@
         <!-- Load the latest Swagger UI code and style from npm using unpkg.com -->
         <script src="https://unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
         <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@3/swagger-ui.css"/>
-        <title>My New API</title>
+        <title>Speedtest API</title>
     </head>
     <body>
         <div id="swagger-ui"></div> <!-- Div to hold the UI component -->
         <script>
             window.onload = function () {
+                const DisableTryItOutPlugin = function() {
+                    return {
+                        statePlugins: {
+                            spec: {
+                                wrapSelectors: {
+                                allowTryItOutFor: () => () => false
+                                }
+                            }
+                        }
+                    }
+                };
+
                 const ui = SwaggerUIBundle({
-                    url: "./src/swagger/swagger.js",
+                    url: "./src/swagger/swagger.json",
                     dom_id: '#swagger-ui',
                     deepLinking: true,
                     presets: [
@@ -18,10 +30,12 @@
                         SwaggerUIBundle.SwaggerUIStandalonePreset
                     ],
                     plugins: [
-                        SwaggerUIBundle.plugins.DownloadUrl
+                        SwaggerUIBundle.plugins.DownloadUrl,
+                        DisableTryItOutPlugin
                     ],
-                })
-                window.ui = ui
+                });
+
+                window.ui = ui;
             }
         </script>
     </body>

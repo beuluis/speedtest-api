@@ -3,7 +3,7 @@ const Router = require('restify-router').Router;
 const swaggerUi = require('swagger-ui-restify');
 
 // Local
-const swaggerDocument = require('../swagger/swagger');
+const swaggerDocument = require('../swagger/swagger.json');
 
 // Get router instance
 const routerInstance = new Router();
