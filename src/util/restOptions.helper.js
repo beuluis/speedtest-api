@@ -1,5 +1,6 @@
 // Dependencies
 const Op = require('sequelize').Op;
+const { endOfDay } = require('date-fns');
 
 // get rest options
 const getRestOptions = (req, pagination = false) => {
@@ -28,7 +29,7 @@ const getRestOptions = (req, pagination = false) => {
             ...opts,
             dateClause: {
                 ...opts.dateClause,
-                [Op.lte]: new Date(req.query.end),
+                [Op.lte]: endOfDay(new Date(req.query.end)),
             },
         };
     }
