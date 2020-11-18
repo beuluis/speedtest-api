@@ -1,6 +1,7 @@
 // Dependencies
-const Op = require('sequelize').Op;
 const { endOfDay } = require('date-fns');
+const config = require('config');
+const Op = require('sequelize').Op;
 
 // get rest options
 const getRestOptions = (req, pagination = false) => {
@@ -9,8 +10,8 @@ const getRestOptions = (req, pagination = false) => {
     // set page settings
     if (pagination) {
         opts = {
-            page: req.query.page || 1,
-            size: req.query.size || 25,
+            page: req.query.page || config.get('defaultValues.page'),
+            size: req.query.size || config.get('defaultValues.size'),
         };
     }
 

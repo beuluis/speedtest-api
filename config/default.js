@@ -59,6 +59,12 @@ module.exports = {
         threshold: 2000, // MS threshold
     },
 
+    // some default values
+    defaultValues: {
+        page: 1, // default page value
+        size: 25, // default size value
+    },
+
     // validation options
     validation: {
         maxSize: 200, // Max page size
