@@ -1,9 +1,6 @@
 version: "3.7"
 services:
     speedtestapi:
-        build:
-            target: develop
-
         container_name: speedtestApiDev
 
         environment:

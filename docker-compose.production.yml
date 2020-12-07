@@ -3,7 +3,7 @@ version: "3.7"
 services:
     speedtestapi:
         build:
-            target: staging
+            dockerfile: Dockerfile.production
 
         container_name: speedtestApiProd
 
