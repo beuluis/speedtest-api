@@ -119,7 +119,7 @@ To get a copy up and running follow these simple steps.
 
 1. Clone the repo
 ```sh
-git clone https://github.com/beuluis/speedtest-api.git --branch master --bare
+git clone https://github.com/beuluis/speedtest-api.git --branch master
 ```
 2. Create a `.env.prod` file
 ```sh
