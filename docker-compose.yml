@@ -1,9 +1,18 @@
 version: "3.7"
-# Prod setup
 services:
     speedtestapi:
         build:
             context: .
+
+        healthcheck:
+            test: ["CMD-SHELL", "node healthcheck.js"]
+            interval: 10s
+            timeout: 5s
+            retries: 5
+
+        depends_on:
+            postgres:
+                condition: service_healthy
 
         networks:
             - default
@@ -15,6 +24,11 @@ services:
 
     postgres:
         image: postgres:12.2-alpine
+
+        healthcheck:
+            interval: 10s
+            timeout: 5s
+            retries: 5
 
         networks:
             - default

@@ -10,6 +10,9 @@ services:
     postgres:
         container_name: speedtestApiPostgresqlStg
 
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U ${PG_USER-speedtestApiStg}"]
+
         environment:
             POSTGRES_USER: ${PG_USER-speedtestApiStg}
             POSTGRES_PASSWORD: ${PG_PASSWORD:?Missing environment variable see readme}

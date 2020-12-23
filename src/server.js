@@ -11,6 +11,7 @@ const { initCron } = require('./util/cron.helper');
 const { checkForDowntime } = require('./util/downtimeDetector.helper');
 
 const downtimeRouter = require('./routes/downtime.routes');
+const healthCheckRouter = require('./routes/healthcheck.routes');
 const interfaceRouter = require('./routes/interface.routes');
 const serverRouter = require('./routes/server.routes');
 const speedtestRouter = require('./routes/speedtest.routes');
@@ -41,6 +42,7 @@ server.use(restify.plugins.throttle(config.get('throttle')));
 
 // Apply Routes
 downtimeRouter.applyRoutes(server);
+healthCheckRouter.applyRoutes(server);
 interfaceRouter.applyRoutes(server);
 serverRouter.applyRoutes(server);
 speedtestRouter.applyRoutes(server);
